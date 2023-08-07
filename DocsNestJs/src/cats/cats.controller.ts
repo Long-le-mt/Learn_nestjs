@@ -28,6 +28,7 @@ export class CatsController {
 
   @Get()
   async findAll(@Query() query: ListAllEntities) {
+    this.catsService.testLog();
     console.log(`This action returns all cats (limit: ${query.limit} items)`);
     return this.catsService.findAll();
   }
